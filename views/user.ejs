@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+
+      <form action="/users/new" method="post">
+        <div>
+          <label for="nickname">Apelido</label>
+          <input type="text" name="nickname" id="nickname" placeholder="Digite aqui seu nome de usuário" required> <br>
+        </div>
+        <div>
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" placeholder="Digite aqui seu nome" required> <br>
+        </div>
+        <div>
+          <label for="idade">Idade</label>
+          <input type="text" name="idade" id="idade" placeholder="Digite aqui sua idade" required> <br>
+        </div>
+
+        <input type="submit" value="Cadastrar">
+      </form>
+      
+      <table>
+        <caption>Cadastro de Usuarios</caption>
+        <thead>
+          <tr>
+            <th>Usuário</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th colspan="2">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.nickname %></td>
+            <td><%= user.name %></td>
+            <td><%= user.idade %></td>
+            <td><a href="/users/edit/<%= user._id %>">Editar</a></td>
+            <td><a href="/users/delete/<%= user._id %>">Excluir</a></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+<%- include("partials/footer.ejs") %>

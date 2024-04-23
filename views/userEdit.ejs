@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+      <form action="/users/update/<%= user._id %>" method="post">
+        <div>
+          <label for="nickname">Apelido</label>
+          <input type="text" name="nickname" id="nickname" placeholder="Digite aqui seu nome de usuário" value="<%= user.nickname %>" required> <br>
+        </div>
+        <div>
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" placeholder="Digite aqui seu nome" value="<%= user.name %>" required> <br>
+        </div>
+        <div>
+          <label for="idade">Idade</label>
+          <input type="text" name="idade" id="idade" placeholder="Digite aqui sua idade" value="<%= user.idade %>" required> <br>
+        </div>
+
+        <input type="submit" value="Atualizar">
+      </form>
+
+<%- include("partials/footer.ejs") %>
