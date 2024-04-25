@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Atualização de Clientes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <form action="/clientes/update/<%= cliente._id %>" method="post">
+        <h2>Alteração dos dados do Cliente</h2>
+
+        <label for="nome">Nome</label> <br>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome aqui" value="<%= cliente.nome %>" required> <br>
+        
+        <br>
+
+        <label for="cargo">Cargo</label> <br>
+        <input type="text" name="cargo" id="cargo" placeholder="Digite seu cargo aqui" value="<%= cliente.cargo %>" required> <br>
+
+        <br>
+
+        <label for="idade">Idade</label> <br>
+        <input type="text" name="idade" id="idade" placeholder="Digite seu idade aqui" value="<%= cliente.idade %>" required> <br>
+
+        <br>
+
+        <button type="submit">Atualizar</button>
+    </form>
+
+</body>
+</html>
