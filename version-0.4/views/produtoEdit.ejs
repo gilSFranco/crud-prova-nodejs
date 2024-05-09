@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos - Prova CRUD</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <form action="/produtos/update/<%= produto._id %>" method="post">
+      <div>
+        <label for="nome">Nome</label> <br />
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Exemplo: sabonete"
+          value="<%= produto.nome %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="quantidade">Quantidade</label> <br />
+        <input
+          type="number"
+          name="quantidade"
+          id="quantidade"
+          placeholder="Exemplo: 21"
+          value="<%= produto.quantidade %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="preco">Preço</label> <br />
+        <input
+          type="text"
+          name="preco"
+          id="preco"
+          placeholder="Exemplo: 30.50"
+          value="<%= produto.preco %>"
+          required
+        />
+      </div>
+
+      <button type="submit">Atualizar</button>
+    </form>
+  </body>
+</html>

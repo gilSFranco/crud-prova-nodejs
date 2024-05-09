@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos - Prova CRUD</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <form action="/produtos/new" method="post">
+      <div>
+        <label for="nome">Nome</label> <br />
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Exemplo: sabonete"
+          required
+        />
+      </div>
+      <div>
+        <label for="quantidade">Quantidade</label> <br />
+        <input
+          type="number"
+          name="quantidade"
+          id="quantidade"
+          placeholder="Exemplo: 21"
+          required
+        />
+      </div>
+      <div>
+        <label for="preco">Preço</label> <br />
+        <input
+          type="text"
+          name="preco"
+          id="preco"
+          placeholder="Exemplo: 30.50"
+          required
+        />
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th colspan="2">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% produtos.forEach(produto => { %>
+        <tr>
+          <td><%= produto.nome %></td>
+          <td><%= produto.quantidade %></td>
+          <td>
+            <%= produto.preco.toLocaleString("pt-br", {style: "currency",
+            currency: "BRL"}) %>
+          </td>
+          <td class="colDelete">
+            <a href="/produtos/delete/<%= produto._id %>">Excluir</a>
+          </td>
+          <td class="colEdit">
+            <a href="/produtos/edit/<%= produto._id %>">Alterar</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

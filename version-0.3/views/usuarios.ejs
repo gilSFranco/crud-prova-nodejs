@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <form action="/usuarios/new" method="post">
+      <div>
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="exemplo"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="exemplo@gmail.com"
+          required
+        />
+      </div>
+      <div>
+        <label for="usuario">Usuario</label>
+        <input
+          type="text"
+          name="usuario"
+          id="usuario"
+          placeholder="exemplo"
+          required
+        />
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Usuario</th>
+          <th colspan="2">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% usuarios.forEach(usuario => { %>
+        <tr>
+          <td><%= usuario.nome %></td>
+          <td><%= usuario.email %></td>
+          <td><%= usuario.usuario %></td>
+          <td>
+            <a href="/usuarios/delete/<%= usuario._id %>" class="delete"
+              >Deletar</a
+            >
+          </td>
+          <td>
+            <a href="/usuarios/edit/<%= usuario._id %>" class="update"
+              >Alterar</a
+            >
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

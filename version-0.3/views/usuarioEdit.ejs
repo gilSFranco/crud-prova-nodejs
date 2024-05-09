@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+  </head>
+  <body>
+    <form action="/usuarios/update/<%= usuario._id %>" method="post">
+      <label for="nome">Nome</label>
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        value="<%= usuario.nome %>"
+        required
+      />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="exemplo@gmail.com"
+        value="<%= usuario.email %>"
+        required
+      />
+      <label for="usuario">Usuario</label>
+      <input
+        type="text"
+        name="usuario"
+        id="usuario"
+        placeholder="exemplo"
+        value="<%= usuario.usuario %>"
+        required
+      />
+
+      <button type="submit">Atualizar</button>
+    </form>
+  </body>
+</html>

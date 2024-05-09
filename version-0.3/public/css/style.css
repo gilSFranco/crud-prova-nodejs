@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.delete {
+  color: #ec2e2e;
+  font-weight: bold;
+}
+
+a.update {
+  color: rgb(0, 98, 255);
+  font-weight: bold;
+}
+
+table {
+  margin-top: 50px;
+}
+
+input,
+button {
+  padding: 5px;
+  border: 0.5 solid #c0c0c0;
+  outline: none;
+}
+
+input {
+  margin: 10px 0 10px 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+
+  padding: 10px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+
+  width: 36.5%;
+}
